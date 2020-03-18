@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://liangzan-beijing.oss-cn-beijing.aliyuncs.com/jquery.min.js"></script>
+
+</head>
+<style>
+    li  
+
+{  
+
+    width: 128px;  
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .5);  
+
+    position: absolute;  
+
+    bottom: 0;  
+
+}  
+
+   
+
+li img  
+
+{  
+
+    width: 128px;  
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .5);  
+
+    vertical-align: middle;  
+
+}  
+
+   
+
+li span  
+
+{  
+
+    display: block;  
+
+    width: 128px;  
+
+    text-align: center;  
+
+    color: #333;  
+
+    font-size: 8px;  
+
+}  
+
+   
+
+#stage  
+
+{  
+
+   
+
+    width: 900px;  
+
+    min-height: 100px;  
+
+    margin-left: auto;  
+
+    margin-right: auto;  
+
+    padding: 100px 50px;  
+
+    -webkit-perspective: 1200px;  
+
+    position: relative;  
+
+}  
+
+   
+
+#container  
+
+{  
+
+    /* background: url("img/1.jpg") no-repeat 0 0;   */
+
+    margin-top: 200px;  
+
+    width: 128px;  
+
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, .5);   */
+
+    height: 100px;  
+
+    margin-left: -64px;  
+
+    -webkit-transition: -webkit-transform 1s;  
+
+    transition: transform 1s;  
+
+    -webkit-transform-style: preserve-3d;  
+
+    position: absolute;  
+
+    left: 50%;  
+
+}  
+
+   
+
+li:nth-child(0)  
+
+{  
+
+    -webkit-transform: rotateY(0deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(1)  
+
+{  
+
+    -webkit-transform: rotateY(40deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(2)  
+
+{  
+
+    -webkit-transform: rotateY(80deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(3)  
+
+{  
+
+    -webkit-transform: rotateY(120deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(4)  
+
+{  
+
+    -webkit-transform: rotateY(160deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(5)  
+
+{  
+
+    -webkit-transform: rotateY(200deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(6)  
+
+{  
+
+    -webkit-transform: rotateY(240deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(7)  
+
+{  
+
+    -webkit-transform: rotateY(280deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(8)  
+
+{  
+
+    -webkit-transform: rotateY(320deg) translateZ(300px);  
+
+}  
+
+   
+
+li:nth-child(9)  
+
+{  
+
+    -webkit-transform: rotateY(360deg) translateZ(300px);  
+
+}
+</style>
+<body>
+    <p id="stage">  
+
+        <ul id="container">  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/>  
+    
+                <span>Do one thing at a time, and do well..</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Do one thing at a time, and do well..</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Keep on going never give up.</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Whatever is worth doing is worth doing well.</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Believe in yourself.</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Action speak louder than words.</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Never put off what you can do today until tomorrow.</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Jack of all trades and master of none.</span>  
+    
+            </li>  
+    
+            <li>  
+    
+                <img src="img/1.jpg"/> <span>Judge not from appearances.</span>  
+    
+            </li>  
+    
+        </ul>  
+    
+    </p> 
+</body>
+
+
+<script type="text/javascript">  
+
+
+    var transform = function (element, value, key)  
+
+    {  
+
+        key = key || "Transform";  
+
+        ["Moz", "O", "Ms", "Webkit", ""].forEach(function (prefix)  
+
+        {  
+
+            element.style[prefix + key] = value;  
+
+        });  
+
+
+
+        return element;  
+
+    }  
+
+
+
+
+
+    $(function ()  
+
+    {  
+
+        var deg = -40 , i = 1;  
+
+        $("#container").click(function ()  
+
+        {  
+
+            transform($(this)[0], "rotateY(" + (deg * i++) + "deg)")  
+
+        });  
+
+    });  
+
+
+
+</script>  
+</html>
